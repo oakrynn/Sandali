@@ -1,0 +1,14 @@
++------------------+        +------------------+        +------------------+        +-------------------+
+|     Users        |        |    Expenses      |        |   Categories     |        |   Investments     |
++------------------+        +------------------+        +------------------+        +-------------------+
+| telegram_id (PK) |<------>| user_id (FK)     |<------>| user_id (FK)     |<------>| user_id (FK)      |
+| phone            |        | category         |        | name (UNIQUE)    |        | asset             |
+| username         |        | amount           |        +------------------+        | quantity          |
+| first_name       |        | description      |                                   | purchase_price    |
+| last_name        |        | date             |                                   | purchase_date     |
++------------------+        +------------------+                                   +-------------------+
+
+Relationships:
+  Users (1) --------< Expenses (Many)       [One user can have many expenses]
+  Users (1) --------< Categories (Many)     [One user can define many categories]
+  Users (1) --------< Investments (Many)    [One user can log many investments]
